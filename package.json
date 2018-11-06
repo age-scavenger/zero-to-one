@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-import": "^1.11.0",
     "babel-preset-mobx": "^2.0.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.1",
@@ -23,9 +24,6 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-loadable": "^5.5.0",
     "style-loader": "^0.23.1",
     "vconsole": "^3.2.0",
     "webpack": "^4.25.0",
@@ -33,8 +31,12 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "antd": "^3.10.4",
     "mobx": "^5.5.2",
     "mobx-react": "^5.3.6",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-loadable": "^5.5.0",
     "react-router-config": "^4.4.0-beta.6",
     "react-router-dom": "^4.3.1"
   }

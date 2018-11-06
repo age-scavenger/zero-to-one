@@ -8,6 +8,6 @@ export default class Root extends Component {
 
   render() {
     const { routes } = this.props.route;
-    return <div>{renderRoutes(routes)}</div>;
+    return <div style={{ height: '100%' }}>{renderRoutes(routes)}</div>;
   }
 }

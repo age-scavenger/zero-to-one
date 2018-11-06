@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import styles from './index.less';
 
+import { Badge } from 'antd';
+
 @inject('home')
 @observer
 export default class Home extends Component {
@@ -76,6 +78,12 @@ export default class Home extends Component {
           onChange={this.updateCurrentValue}
         />
         <button onClick={this.addListItem}>添加list</button>
+
+        <div>
+          <Badge count={0} showZero>
+            <a href="#" className="head-example" />
+          </Badge>
+        </div>
       </div>
     );
   }

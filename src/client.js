@@ -7,8 +7,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import Store from './store';
 import { Provider } from 'mobx-react';
-
 const store = new Store();
+
+import 'antd/dist/antd.css';
 /**
  * 错误捕捉测试
  */
