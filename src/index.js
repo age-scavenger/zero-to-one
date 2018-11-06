@@ -1,15 +1,14 @@
 /*
  * @Author: Day 
  * @Date: 2018-11-06 09:40:09 
- * @Last Modified by:   Day 
- * @Last Modified time: 2018-11-06 09:40:09 
+ * @Last Modified by: Day
+ * @Last Modified time: 2018-11-06 12:35:54
  */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './client';
-
 import VConsole from 'vconsole';
 
 import registerServiceWorker from './registerServiceWorker';
