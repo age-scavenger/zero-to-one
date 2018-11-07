@@ -1,4 +1,4 @@
-import { observable, computed, action } from 'mobx';
+import { observable, computed, action, autorun } from 'mobx';
 
 export default class Home {
   /** 数据可观测 */
@@ -12,6 +12,10 @@ export default class Home {
   get listLength() {
     return this.list.length;
   }
+
+  printNewestListLength = autorun(() => {
+    console.log(`autorun:${this.list.length}`);
+  });
 
   @action
   addListItem(item) {

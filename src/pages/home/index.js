@@ -5,6 +5,13 @@ import styles from './index.less';
 
 import { Badge } from 'antd';
 
+import WrapperTitle from '../../components/test/hoc';
+import {
+  ChildrenPassJSXObj,
+  ChildrenRender,
+  PropsRender
+} from '../../components/test/props-render';
+
 @inject('home')
 @observer
 export default class Home extends Component {
@@ -71,19 +78,28 @@ export default class Home extends Component {
           list.length:
           {this.props.home.listLength}
         </div>
-
         <input
           type="text"
           value={this.state.currentValue}
           onChange={this.updateCurrentValue}
         />
         <button onClick={this.addListItem}>添加list</button>
-
         <div>
           <Badge count={0} showZero>
             <a href="#" className="head-example" />
           </Badge>
         </div>
+        <WrapperTitle />
+
+        <ChildrenPassJSXObj>{{ name: 'day' }}</ChildrenPassJSXObj>
+
+        <ChildrenRender>
+          {name => <div style={{ color: 'black' }}>{name}</div>}
+        </ChildrenRender>
+
+        <PropsRender
+          render={({ name }) => <div style={{ color: 'blue' }}>{name}</div>}
+        />
       </div>
     );
   }

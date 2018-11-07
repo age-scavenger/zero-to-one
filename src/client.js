@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ErrorBoundary from '../components/common/ErrorBoundary';
+import ErrorBoundary from './components/common/error-boundary';
 import routes from './routes';
 import { renderRoutes } from 'react-router-config';
 import { BrowserRouter as Router } from 'react-router-dom';
