@@ -1,17 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, '..', 'src/index.js'),
+  entry: path.resolve(__dirname, "..", "src/index.js"),
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, '..', 'dist')
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "..", "dist")
   },
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   devServer: {
-    contentBase: './dist',
+    contentBase: "./dist",
     hot: true,
     /**
      * ! link https://juejin.im/entry/5b50518bf265da0f6436c34a
@@ -25,51 +25,51 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: "babel-loader"
         }
       },
       {
         test: /\.html$/,
         exclude: /public/,
         use: {
-          loader: 'html-loader'
+          loader: "html-loader"
         }
       },
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader' },
+          { loader: "style-loader" },
           {
-            loader: 'css-loader'
+            loader: "css-loader"
           }
         ]
       },
-      {
-        test: /\.css$/,
-        exclude: [/node_modules/],
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          }
-        ]
-      },
+      // {
+      //   test: /\.css$/,
+      //   exclude: [/node_modules/],
+      //   use: [
+      //     { loader: 'style-loader' },
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         modules: true
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.less$/,
         exclude: [/node_modules/],
         use: [
-          { loader: 'style-loader' },
+          { loader: "style-loader" },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               modules: true
             }
           },
           {
-            loader: 'less-loader'
+            loader: "less-loader"
           }
         ]
       },
@@ -77,9 +77,9 @@ module.exports = {
         test: /\.(png|jpg|gif|jpeg)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              outputPath: './static/images/'
+              outputPath: "./static/images/"
             }
           }
         ]
@@ -87,11 +87,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
-      title: 'zero to one',
-      template: path.resolve(__dirname, '..', 'public/template.html'),
-      filename: path.resolve(__dirname, '..', 'dist/index.html')
+      title: "zero to one",
+      template: path.resolve(__dirname, "..", "public/template.html"),
+      filename: path.resolve(__dirname, "..", "dist/index.html")
     }),
     new webpack.HotModuleReplacementPlugin()
   ]

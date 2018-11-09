@@ -1,24 +1,27 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
-import styles from './index.less';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { inject, observer } from "mobx-react";
+import styles from "./index.less";
 
-import { Badge } from 'antd';
+import { Badge } from "antd";
 
-import WrapperTitle from '../../components/test/hoc';
+import WrapperTitle from "../../components/test/hoc";
 import {
   ChildrenPassJSXObj,
   ChildrenRender,
   PropsRender
-} from '../../components/test/props-render';
+} from "../../components/test/props-render";
 
-@inject('home')
+import A from "../../components/test/a";
+import B from "../../components/test/b";
+
+@inject("home")
 @observer
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentValue: ''
+      currentValue: ""
     };
     this.linkToPageB = this.linkToPageB.bind(this);
     this.updateCurrentValue = this.updateCurrentValue.bind(this);
@@ -31,8 +34,8 @@ export default class Home extends Component {
 
   linkToPageB() {
     this.props.history.push({
-      pathname: '/page-b',
-      search: 'a=1&b=2',
+      pathname: "/page-b",
+      search: "a=1&b=2",
       query: {
         id: 1
       },
@@ -54,7 +57,7 @@ export default class Home extends Component {
     console.log(home);
     home.addListItem(this.state.currentValue);
     this.setState({
-      currentValue: ''
+      currentValue: ""
     });
   }
 
@@ -91,15 +94,17 @@ export default class Home extends Component {
         </div>
         <WrapperTitle />
 
-        <ChildrenPassJSXObj>{{ name: 'day' }}</ChildrenPassJSXObj>
+        <ChildrenPassJSXObj>{{ name: "day" }}</ChildrenPassJSXObj>
 
         <ChildrenRender>
-          {name => <div style={{ color: 'black' }}>{name}</div>}
+          {name => <div style={{ color: "black" }}>{name}</div>}
         </ChildrenRender>
 
         <PropsRender
-          render={({ name }) => <div style={{ color: 'blue' }}>{name}</div>}
+          render={({ name }) => <div style={{ color: "blue" }}>{name}</div>}
         />
+        <A />
+        <B />
       </div>
     );
   }
